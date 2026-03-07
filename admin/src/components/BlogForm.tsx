@@ -89,22 +89,22 @@ export default function BlogForm({ initialData }: BlogFormProps) {
             <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Başlıq</label>
+                        <label className="block text-sm font-bold text-gray-900">Başlıq</label>
                         <input
                             type="text"
                             required
-                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 bg-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             value={title}
                             onChange={handleTitleChange}
                         />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Slug</label>
+                        <label className="block text-sm font-bold text-gray-900">Slug</label>
                         <input
                             type="text"
                             required
-                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 bg-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             value={slug}
                             onChange={(e) => setSlug(e.target.value)}
                         />
@@ -112,10 +112,10 @@ export default function BlogForm({ initialData }: BlogFormProps) {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Şəkil URL</label>
+                    <label className="block text-sm font-bold text-gray-900">Şəkil URL</label>
                     <input
                         type="text"
-                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 bg-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
                         placeholder="https://example.com/image.jpg"
@@ -124,7 +124,7 @@ export default function BlogForm({ initialData }: BlogFormProps) {
 
                 <div>
                     <div className="flex justify-between items-center mb-2">
-                        <label className="block text-sm font-medium text-gray-700">Məzmun (Markdown dəstəyi ilə)</label>
+                        <label className="block text-sm font-bold text-gray-900">Məzmun (Markdown dəstəyi ilə)</label>
                         <button
                             type="button"
                             onClick={() => setPreview(!preview)}
@@ -135,14 +135,14 @@ export default function BlogForm({ initialData }: BlogFormProps) {
                     </div>
 
                     {preview ? (
-                        <div className="prose prose-indigo max-w-none border border-gray-200 p-4 rounded-md min-h-[300px] bg-gray-50">
+                        <div className="prose prose-indigo max-w-none border border-gray-200 p-4 rounded-md min-h-[300px] bg-gray-50 text-gray-900">
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
                         </div>
                     ) : (
                         <textarea
                             rows={15}
                             required
-                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm font-mono"
+                            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 bg-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm font-mono"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             placeholder="Markdown formatında mətn bura daxil edin... \n\n# Başlıq \n## Alt başlıq \n**Qalın**, *maili* \n- Siyahı \n[Link](url)"

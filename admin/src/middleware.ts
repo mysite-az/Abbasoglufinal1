@@ -5,6 +5,19 @@ import { getSession } from "@/lib/auth";
 export async function middleware(request: NextRequest) {
     const session = await getSession();
 
+    const res = await handleRequest(request, session);
+
+    // Add CORS headers for API routes
+    if (request.nextUrl.pathname.startsWith("/api")) {
+        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH");
+        res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    }
+
+    return res;
+}
+
+async function handleRequest(request: NextRequest, session: any) {
     // If trying to access /login while already logged in
     if (session && request.nextUrl.pathname.startsWith("/login")) {
         return NextResponse.redirect(new URL("/dashboard", request.url));
@@ -29,7 +42,6 @@ export async function middleware(request: NextRequest) {
 
 
         if (request.nextUrl.pathname.startsWith("/api")) {
-
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
         return NextResponse.redirect(new URL("/login", request.url));
@@ -37,6 +49,7 @@ export async function middleware(request: NextRequest) {
 
     return NextResponse.next();
 }
+
 
 export const config = {
     matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
