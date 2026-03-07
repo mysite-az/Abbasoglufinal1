@@ -17,7 +17,7 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
         const response = NextResponse.json(blog);
         response.headers.set('Access-Control-Allow-Origin', '*');
         return response;
-    } catch (error) {
+    } catch (_error) {
 
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }

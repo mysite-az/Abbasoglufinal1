@@ -13,7 +13,7 @@ export async function GET() {
         const response = NextResponse.json(allBlogs);
         response.headers.set('Access-Control-Allow-Origin', '*');
         return response;
-    } catch (error) {
+    } catch (_error) {
 
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         });
 
         return NextResponse.json({ success: true });
-    } catch (error: any) {
+    } catch (_error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }

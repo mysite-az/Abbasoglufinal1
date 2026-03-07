@@ -37,9 +37,9 @@ export async function POST(req: Request) {
         response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
 
         return response;
-    } catch (error: any) {
+    } catch (_error) {
 
-        console.error("Submission error:", error);
+        console.error("Submission error:", _error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
@@ -50,7 +50,7 @@ export async function GET() {
             orderBy: (submissions, { desc }) => [desc(submissions.createdAt)],
         });
         return NextResponse.json(allSubmissions);
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }

@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Save, X, ArrowLeft } from "lucide-react";
+import { Save, ArrowLeft } from "lucide-react";
+
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";

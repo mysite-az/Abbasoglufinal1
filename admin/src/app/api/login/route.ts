@@ -26,7 +26,7 @@ export async function POST(req: Request) {
         await login({ id: user.id, username: user.username });
 
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }

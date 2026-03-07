@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET || "fallback-secret");
 
-export async function login(payload: any) {
+export async function login(payload: { id: string; username: string }) {
     const token = await new SignJWT(payload)
         .setProtectedHeader({ alg: "HS256" })
         .setIssuedAt()
@@ -30,7 +30,7 @@ export async function getSession() {
     try {
         const { payload } = await jwtVerify(token, secret);
         return payload;
-    } catch (err) {
+    } catch (_err) {
         return null;
     }
 }

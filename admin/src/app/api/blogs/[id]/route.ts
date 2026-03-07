@@ -14,7 +14,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
         }).where(eq(blogs.id, id));
 
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
@@ -24,7 +24,7 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
         const { id } = await params;
         await db.delete(blogs).where(eq(blogs.id, id));
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
