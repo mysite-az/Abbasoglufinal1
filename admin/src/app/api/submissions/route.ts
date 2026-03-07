@@ -2,8 +2,10 @@ import { db } from "@/lib/db";
 import { submissions } from "@/lib/db/schema";
 import { nanoid } from "nanoid";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export async function OPTIONS() {
+
     const response = new NextResponse(null, { status: 204 });
     response.headers.set('Access-Control-Allow-Origin', '*');
     response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -16,6 +18,7 @@ export async function POST(req: Request) {
     try {
         const data = await req.json();
         const { name, email, phone, service, location, date } = data;
+        console.log("Müraciət daxil oldu:", { name, email, phone });
 
         if (!name || !email || !phone || !service) {
             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -30,8 +33,13 @@ export async function POST(req: Request) {
             location: location || null,
             date: date || null,
         });
+        console.log("Müraciət bazaya yazıldı.");
+
+
+        revalidatePath("/dashboard/submissions");
 
         const response = NextResponse.json({ success: true });
+
         response.headers.set('Access-Control-Allow-Origin', '*');
         response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', 'Content-Type');

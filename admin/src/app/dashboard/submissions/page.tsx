@@ -2,7 +2,10 @@ import { db } from "@/lib/db";
 import { submissions } from "@/lib/db/schema";
 import { desc } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 export default async function SubmissionsPage() {
+
     const allSubmissions = await db.query.submissions.findMany({
         orderBy: [desc(submissions.createdAt)],
     });
