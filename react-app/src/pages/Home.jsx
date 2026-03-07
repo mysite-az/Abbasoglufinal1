@@ -1,6 +1,55 @@
 import React from 'react';
 
 function Home() {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    field: '',
+    location: '',
+    date: ''
+  });
+  const [status, setStatus] = React.useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3558';
+      const response = await fetch(`${apiUrl}/api/submissions`, {
+        method: 'POST',
+
+
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.field,
+          location: formData.location,
+          date: formData.date
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', field: '', location: '', date: '' });
+        alert('Müraciətiniz qəbul olundu!');
+      } else {
+        setStatus('error');
+        alert('Xəta baş verdi. Yenidən cəhd edin.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+      alert('Xəta baş verdi. Şəbəkə bağlantısını yoxlayın.');
+    }
+  };
+
   return (
     <>
       <section
@@ -59,8 +108,7 @@ function Home() {
             <div className="hero-form-wrap">
               <h2 className="hero-form-title">Fərdi Təklif Al</h2>
               <div className="no-margin w-form">
-                {/* Static form for now – can be wired to backend later */}
-                <form>
+                <form onSubmit={handleSubmit}>
                   <label htmlFor="home-name">Adınız</label>
                   <input
                     className="form-input w-input"
@@ -69,6 +117,9 @@ function Home() {
                     placeholder="Adınız və Soyadınız"
                     type="text"
                     id="home-name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
                   <label htmlFor="home-email">Email</label>
                   <input
@@ -78,6 +129,9 @@ function Home() {
                     placeholder="nümunə@gmail.com"
                     type="email"
                     id="home-email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                   />
                   <div className="form-input-wrap">
                     <div className="input-group no-margin">
@@ -89,11 +143,21 @@ function Home() {
                         placeholder="+994 XX XXX XX XX"
                         type="tel"
                         id="home-phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="input-group no-margin">
                       <label htmlFor="home-field">Xidməti seçin</label>
-                      <select id="home-field" name="field" className="form-select w-select" defaultValue="">
+                      <select
+                        id="home-field"
+                        name="field"
+                        className="form-select w-select"
+                        value={formData.field}
+                        onChange={handleChange}
+                        required
+                      >
                         <option value="">Xidməti seçin</option>
                         <option value="office">Ofis və Biznes mərkəzi</option>
                         <option value="facade">Fasad və Şüşə</option>
@@ -112,6 +176,8 @@ function Home() {
                         placeholder="Bakı"
                         type="text"
                         id="home-location"
+                        value={formData.location}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="input-group no-margin">
@@ -123,12 +189,18 @@ function Home() {
                         placeholder="dd-mm-yy"
                         type="text"
                         id="home-date"
+                        value={formData.date}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
                   <div className="hero-form-button-wrap">
-                    <button type="submit" className="button-primary-2 button-full w-button">
-                      Göndər
+                    <button
+                      type="submit"
+                      className="button-primary-2 button-full w-button"
+                      disabled={status === 'sending'}
+                    >
+                      {status === 'sending' ? 'Göndərilir...' : 'Göndər'}
                     </button>
                   </div>
                 </form>
@@ -202,4 +274,3 @@ function Home() {
 }
 
 export default Home;
-

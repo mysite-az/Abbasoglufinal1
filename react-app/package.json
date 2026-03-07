@@ -3,18 +3,22 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3557",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --port 3557"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.29.0"
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.29.0",
+    "remark-gfm": "^4.0.1",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.7.0",
     "vite": "^6.0.0"
   }
 }
-

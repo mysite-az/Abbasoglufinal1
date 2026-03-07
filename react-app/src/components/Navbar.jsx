@@ -40,10 +40,15 @@ function Navbar() {
             <NavLink to="/services" className="nav-link-light w-nav-link">
               Xidmətlər
             </NavLink>
+            <NavLink to="/blogs" className="nav-link-light w-nav-link">
+              Bloglar
+            </NavLink>
             <NavLink to="/about" className="nav-link-light w-nav-link">
               Haqqımızda
             </NavLink>
+
           </nav>
+
           <div className="right-nav">
             <a
               href="https://wa.link/bg23ku"
