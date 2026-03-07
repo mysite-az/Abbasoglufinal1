@@ -17,12 +17,19 @@ export async function middleware(request: NextRequest) {
             return NextResponse.next();
         }
 
+        // Allow public access to login API
+        if (request.nextUrl.pathname === "/api/login" && request.method === "POST") {
+            return NextResponse.next();
+        }
+
         // Allow public access to POST submissions
         if (request.nextUrl.pathname === "/api/submissions" && request.method === "POST") {
             return NextResponse.next();
         }
 
+
         if (request.nextUrl.pathname.startsWith("/api")) {
+
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
         return NextResponse.redirect(new URL("/login", request.url));

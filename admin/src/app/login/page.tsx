@@ -22,8 +22,10 @@ export default function LoginPage() {
         if (res.ok) {
             router.push("/dashboard");
         } else {
-            setError("Invalid username or password");
+            const data = await res.json();
+            setError(data.error || "Giriş alınmadı");
         }
+
     };
 
     return (
