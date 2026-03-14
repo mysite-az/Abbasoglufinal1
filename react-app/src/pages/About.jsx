@@ -170,6 +170,95 @@ function About() {
           </div>
         </div>
       </section>
+
+      {/* service-box-section */}
+      <section className="service-box-section section-spacing">
+        <div className="w-layout-blockcontainer container w-container">
+          <div className="section-title text-center" style={{ opacity: 1 }}>
+            <h2>Ən Çox Tələb Olunan Xidmətlərimiz</h2>
+          </div>
+          <div className="w-layout-grid grid-service-box">
+            <div className="service-box-item" style={{ opacity: 1 }}>
+              <div className="service-box-icon-rounded">
+                <img loading="eager" src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf5a_service-icon-01.svg" alt="Service Icon" className="service-box-icon" />
+              </div>
+              <h3 className="service-box-title">Ofis və Biznes mərkəzi</h3>
+              <p className="service-box-description">Biznes mərkəzləri, klinikalar və obyektlər üçün sabit və yüksək səviyyəli xidmət.</p>
+            </div>
+            <div className="service-box-item" style={{ opacity: 1 }}>
+              <div className="service-box-icon-rounded">
+                <img loading="eager" src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf49_service-icon-02.svg" alt="Service Icon" className="service-box-icon" />
+              </div>
+              <h4 className="service-box-title">Fasad və Şüşə</h4>
+              <p className="service-box-description">Binaların fasad və şüşələrinin sənaye alpinistləri tərəfindən mükəmməl yuyulması.</p>
+            </div>
+            <div className="service-box-item" style={{ opacity: 1 }}>
+              <div className="service-box-icon-rounded">
+                <img loading="eager" src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf5b_service-icon-03.svg" alt="Service Icon" className="service-box-icon" />
+              </div>
+              <h5 className="service-box-title">Təmir Sonrası Dərin Təmizlik</h5>
+              <p className="service-box-description">Tikinti və təmir prosesindən sonra yaranan toz, sement izi və çirklər xüsusi texnika və peşəkar vasitələrlə aradan qaldırılır.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* team-section */}
+      <section className="team-section section-spacing-bottom" style={{ opacity: 1 }}>
+        <div className="w-layout-blockcontainer container w-container">
+          <div className="section-title">
+            <h2 className="no-margin">Bizim Komandamız</h2>
+          </div>
+          <div className="w-dyn-list">
+            <div role="list" className="grid-team w-dyn-items">
+              <div role="listitem" className="w-dyn-item">
+                <div className="team-item">
+                  <div className="team-image-wrap">
+                    <img loading="eager" alt="Komanda rəhbəri" src="https://customer-assets.emergentagent.com/job_site-snapshot-18/artifacts/nnlrdkl3_Screenshot%202026-03-09%20at%2022.14.34.png" className="team-image"/>
+                  </div>
+                  <div className="team-info">
+                    <h3 style={{ color: "rgb(30,30,30)" }} className="team-title">Komanda rəhbəri</h3>
+                    <div className="job-title">Proses idarəçisi</div>
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" className="w-dyn-item">
+                <div className="team-item">
+                  <div className="team-image-wrap">
+                    <img loading="eager" alt="Alpinist qrupunun rəhbəri" src="https://customer-assets.emergentagent.com/job_site-snapshot-18/artifacts/5pqc9k11_Screenshot%202026-03-09%20at%2022.14.51.png" className="team-image"/>
+                  </div>
+                  <div className="team-info">
+                    <h3 style={{ color: "rgb(30,30,30)" }} className="team-title">Alpinist qrupunun rəhbəri</h3>
+                    <div className="job-title">Sertifikatlı mütəxəssis</div>
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" className="w-dyn-item">
+                <div className="team-item">
+                  <div className="team-image-wrap">
+                    <img loading="eager" alt="Keyfiyyət üzrə menecer" src="https://customer-assets.emergentagent.com/job_site-snapshot-18/artifacts/704nk2ju_Screenshot%202026-03-09%20at%2022.15.34.png" className="team-image"/>
+                  </div>
+                  <div className="team-info">
+                    <h3 style={{ color: "rgb(30,30,30)" }} className="team-title">Keyfiyyət üzrə menecer</h3>
+                    <div className="job-title">Məsul menecer</div>
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" className="w-dyn-item">
+                <div className="team-item">
+                  <div className="team-image-wrap">
+                    <img loading="eager" alt="Personal üzrə menecer" src="https://customer-assets.emergentagent.com/job_site-snapshot-18/artifacts/l545d6r2_Screenshot%202026-03-09%20at%2022.16.13.png" className="team-image"/>
+                  </div>
+                  <div className="team-info">
+                    <h3 style={{ color: "rgb(30,30,30)" }} className="team-title">Personal üzrə menecer</h3>
+                    <div className="job-title">İnsan resursları</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
