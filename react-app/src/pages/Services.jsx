@@ -35,7 +35,7 @@ function Services() {
                   <img
                     loading="eager"
                     alt="Service Image"
-                    src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf57_service-image-01.avif"
+                    src="images/service-general.jpg"
                     className="service-one-image"
                   />
                 </div>
@@ -54,7 +54,7 @@ function Services() {
                   <img
                     loading="eager"
                     alt="Service Image"
-                    src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf4b_service-image-02.avif"
+                    src="images/service-fasad.jpg"
                     className="service-one-image"
                   />
                 </div>
@@ -75,7 +75,7 @@ function Services() {
                   <img
                     loading="eager"
                     alt="Service Image"
-                    src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757cfffc7e5ff9daae7bf53_service-image-04.avif"
+                    src="images/service-office.jpg"
                     className="service-one-image"
                   />
                 </div>
@@ -90,7 +90,14 @@ function Services() {
 
             <div className="service-one-item">
               <div>
-                <div className="service-one-image-wrap" />
+                <div className="service-one-image-wrap">
+                  <img
+                    loading="eager"
+                    alt="Service Image"
+                    src="images/service-sofa.jpg"
+                    className="service-one-image"
+                  />
+                </div>
                 <div className="service-one-info">
                   <h5 className="service-one-title">Dezinfeksiya</h5>
                   <p className="service-one-description">
@@ -102,7 +109,14 @@ function Services() {
 
             <div className="service-one-item">
               <div>
-                <div className="service-one-image-wrap" />
+                <div className="service-one-image-wrap">
+                  <img
+                    loading="eager"
+                    alt="Service Image"
+                    src="images/service-fire.jpg"
+                    className="service-one-image"
+                  />
+                </div>
                 <div className="service-one-info">
                   <h5 className="service-one-title">Yanğından sonra təmizlik</h5>
                   <p className="service-one-description">
@@ -115,86 +129,6 @@ function Services() {
         </div>
       </section>
 
-      {/* about-center-section */}
-      <section className="about-center-section">
-        <div className="w-layout-blockcontainer container w-container">
-          <div className="about-center-wrap">
-            <h2 className="about-center-title" style={{ opacity: 1 }}>Sarsılmaz fədakarlıq və ən yüksək standart keyfiyyətlə təmizlik xidmətləri göstəririk</h2>
-            <div className="w-layout-grid grid-counter" style={{ opacity: 1 }}>
-              <div className="counter-item">
-                <h3 className="counter-number">300<span className="text-primary-2">+</span></h3>
-                <h4 className="counter-title">Tamamlanmış layihə</h4>
-              </div>
-              <div className="counter-item">
-                <h3 className="counter-number">98<span className="text-primary-2">%</span></h3>
-                <h4 className="counter-title">Məmnun müştəri</h4>
-              </div>
-              <div className="counter-item">
-                <h3 className="counter-number">50<span className="text-primary-2">+</span></h3>
-                <h4 className="counter-title">Peşəkar əməkdaş</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* request-demo-section */}
-      <section className="request-demo-section">
-        <div className="w-layout-blockcontainer container w-container">
-          <div className="w-layout-grid grid-request-form" style={{ opacity: 1 }}>
-            <div className="request-demo-image-wrap">
-              <img loading="eager" src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6757d9461e0346b02f5d4fd2_contact-image.avif" alt="Contact Image" className="request-demo-image" />
-            </div>
-            <div className="request-demo-form-wrap">
-              <h4 className="request-demo-title">Xidmət sifariş edin</h4>
-              <div className="no-margin w-form">
-                <form id="wf-form-Request-A-Demo-Form" name="wf-form-Request-A-Demo-Form" data-name="Request A Demo Form" method="get">
-                  <label htmlFor="Name">Adınız</label>
-                  <input className="form-input contact-input w-input" maxLength={256} name="Name" data-name="Name" placeholder="Dennis barrett" type="text" id="Name" />
-                  <label htmlFor="Email">Email</label>
-                  <input className="form-input contact-input w-input" maxLength={256} name="Email" data-name="Email" placeholder="example@gmail.com" type="email" id="Email" required />
-                  <div className="form-input-wrap">
-                    <div className="input-group no-margin">
-                      <label htmlFor="Phone">Telefon</label>
-                      <input className="form-input contact-input w-input" maxLength={256} name="Phone" data-name="Phone" placeholder="+1234567890" type="tel" id="Phone" />
-                    </div>
-                    <div className="input-group no-margin">
-                      <label htmlFor="Field">Xidmət seçin</label>
-                      <select id="Field" name="Field" data-name="Field" className="form-select contact-input w-select">
-                        <option value="Another option">Xidmət seçin</option>
-                        <option value="">Ofis və Biznes mərkəzi</option>
-                        <option value="First">Fasad və Şüşə</option>
-                        <option value="Second">İctimai yerlərin təmizliyi</option>
-                        <option value="Third">Təmir Sonrası Təmizlik</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="form-input-wrap">
-                    <div className="input-group no-margin">
-                      <label htmlFor="Location">Ünvan</label>
-                      <input className="form-input contact-input w-input" maxLength={256} name="Location" data-name="Location" placeholder="Los angeles" type="text" id="Location" />
-                    </div>
-                    <div className="input-group no-margin">
-                      <label htmlFor="Date">Tarix</label>
-                      <input className="form-input contact-input w-input" maxLength={256} name="Date" data-name="Date" placeholder="dd-mm-yy" type="text" id="Date" />
-                    </div>
-                  </div>
-                  <div className="hero-form-button-wrap">
-                    <input type="submit" data-wait="Gözləyin..." className="button-primary-2 button-full w-button" value="Göndər" />
-                  </div>
-                </form>
-              </div>
-              <div className="request-demo-detail">
-                <div>VƏ YA</div>
-                <div className="request-demo-wrap">
-                  <img loading="eager" src="https://cdn.prod.website-files.com/6756b988bb35f025028d3f34/6762529184f5394d604f57de_call-icon-dark.svg" alt="" className="contact-icons" />
-                  <h5 className="request-a-demo-title">Bizimlə əlaqə: <a href="tel:055 444 16 02" className="request-demo-link">055 444 16 02</a> </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* faq-section */}
       <section className="faq-section section-spacing" style={{ opacity: 1 }}>

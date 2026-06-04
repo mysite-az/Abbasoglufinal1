@@ -162,7 +162,8 @@ function Home() {
                         <option value="">Xidməti seçin</option>
                         <option value="office">Ofis və Biznes mərkəzi</option>
                         <option value="facade">Fasad və Şüşə</option>
-                        <option value="manager-check">Məsul menecer yoxlaması</option>
+                        <option value="apartment">Mənzil təmizliyi</option>
+                        <option value="restaurant">Restoran,kafe təmizliyi</option>
                         <option value="post-renovation">Təmir Sonrası Təmizlik</option>
                       </select>
                     </div>
